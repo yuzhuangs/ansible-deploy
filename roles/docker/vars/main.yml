@@ -1,0 +1,2 @@
+goharbor_addr: http://10.25.226.2:5000
+graph: /data/docker

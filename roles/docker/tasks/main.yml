@@ -1,0 +1,29 @@
+- name: create docker graph directory
+  file:
+    path: "{{ graph }}"
+    state: directory
+    mode: 777
+    owner: root
+    group: root
+
+- name: install docker-ce
+  yum: 
+    name: docker-ce
+    state: installed
+    update_cache: yes 
+
+- name: start docker
+  service: 
+    name: docker
+    state: started
+    enabled: yes
+
+- name: update daemon.json
+  template:
+    src: daemon.json.j2
+    dest: /etc/docker/daemon.json
+    owner: root
+    group: root
+  notify:
+    - restart docker
+
