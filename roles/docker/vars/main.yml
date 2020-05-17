@@ -1,0 +1,3 @@
+aliyun_mirror: https://9lop076t.mirror.aliyuncs.com
+goharbor_addr: http://10.25.226.2:5000
+graph: /data/docker
